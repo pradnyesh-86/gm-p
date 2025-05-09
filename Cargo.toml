@@ -49,3 +49,7 @@ reqwest = { version = "0.11", features = ["json"] }
 rayon = "1.8"
 coins-bip32 = "0.12.0"
 humantime = "2.2.0"
+open = "5.0.0"
+copypasta = "0.10"
+webbrowser = "0.8"
+clipboard = "0.4.6"

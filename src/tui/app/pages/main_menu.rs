@@ -13,9 +13,7 @@ use crate::{
 };
 
 use super::{
-    account::AccountPage, address_book::AddressBookPage, assets::AssetsPage, config::ConfigPage,
-    send_message::SendMessagePage, sign_message::SignMessagePage, transaction::TransactionPage,
-    Page,
+    account::AccountPage, address_book::AddressBookPage, assets::AssetsPage, config::ConfigPage, receive_payment::ReceivePaymentPage, send_message::SendMessagePage, sign_message::SignMessagePage, transaction::TransactionPage, Page
 };
 
 pub struct MainMenuPage {
@@ -78,6 +76,11 @@ impl Component for MainMenuPage {
                         Action::SendMessage { .. } => result
                             .page_inserts
                             .push(Page::SendMessage(SendMessagePage::default())),
+                        Action::ReceivePayment { .. } => {
+                            result
+                                .page_inserts
+                                .push(Page::ReceivePayment(ReceivePaymentPage::default()))
+                        }
                         Action::Config { .. } => result
                             .page_inserts
                             .push(Page::Config(ConfigPage::default())),
